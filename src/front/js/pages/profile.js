@@ -84,12 +84,12 @@ export const Profile = () => {
       image: store.user.image,
     };
 
-    const response = await actions.updateUserProfile(data);
-      if (response.ok) {
-        CustomAlertsUser();
-      } else {
-        CustomAlertsUserIncomplete();
-      }
+    if (actions.updateUserProfile(data)) {
+      CustomAlertsUser();
+    } else {
+      CustomAlertsUserIncomplete();
+    }
+
   };
 
   const darkTheme = createTheme({
