@@ -83,13 +83,14 @@ export const Profile = () => {
       contact: store.user.contact,
       image: store.user.image,
     };
-    
-      const response = await actions.updateUserProfile(data);
+
+    const response = await actions.updateUserProfile(data);
       if (response.ok) {
         CustomAlertsUser();
       } else {
         CustomAlertsUserIncomplete();
       }
+  };
 
   const darkTheme = createTheme({
     palette: {
